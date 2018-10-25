@@ -1,0 +1,9 @@
+server:
+  port: 10007
+##############################
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.6.221.129:10003/eureka
+  instance:
+    instance-id : ${spring.application.name}:${ip}:${spring.profiles.active}:${server.port} 

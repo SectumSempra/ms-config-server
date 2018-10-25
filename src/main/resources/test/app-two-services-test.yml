@@ -1,6 +1,6 @@
 server:
-  port: 10000
-########################################################    
+  port: 20001
+###############################    
 spring:
   datasource:
     url: jdbc:h2:mem:hr?useUnicode=yes&characterEncoding=UTF-8;DB_CLOSE_ON_EXIT=FALSE;INIT=runscript from '~/h2sqlfiles/hr_ddl.sql';
@@ -19,14 +19,15 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
-########################################################    
+#################################        
 eureka:
   client:
     service-url:
-      defaultZone: http://10.6.221.129:10003/eureka
+      defaultZone: http://10.6.221.129:20003/eureka
   instance:
-    instance-id : ${spring.application.name}:${ip}:${spring.profiles.active}:${server.port}  
-########################################################    
-app-two-services:
-   ribbon:
-    listOfServers: localhost:10001, localhost:10002
+    instance-id : ${spring.application.name}:${ip}:${spring.profiles.active}:${server.port} 
+      
+#################################      
+app-one-services:
+  ribbon:
+    listOfServers: localhost:10000, localhost:10005

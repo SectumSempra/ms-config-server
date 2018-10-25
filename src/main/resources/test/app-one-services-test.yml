@@ -1,7 +1,5 @@
 server:
   port: 20000
-  servlet:
-    context-path: /app-one-api/
 ########################################################    
 spring:
   datasource:
@@ -25,9 +23,9 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://10.6.221.129:10003/eureka
+      defaultZone: http://10.6.221.129:20003/eureka
   instance:
-    instance-id:  ${spring.application.name}     
+    instance-id : ${spring.application.name}:${ip}:${spring.profiles.active}:${server.port}    
 ########################################################    
 app-two-services:
    ribbon:
