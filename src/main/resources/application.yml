@@ -9,4 +9,10 @@ spring:
       server:
         git:
           clone-on-start: true
-          uri: 
+          uri: C:\workspace-BE\config-server\.git
+          search-paths: conffiles
+          
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.6.221.129:10003/eureka         
