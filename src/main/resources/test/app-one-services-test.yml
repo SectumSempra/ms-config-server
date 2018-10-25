@@ -1,0 +1,33 @@
+server:
+  port: 20000
+  servlet:
+    context-path: /app-one-api/
+ 
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:hr?useUnicode=yes&characterEncoding=UTF-8;DB_CLOSE_ON_EXIT=FALSE;INIT=runscript from '~/h2sqlfiles/hr_ddl.sql';
+    username: sa
+    password: null
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2-database
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.6.221.129:10003/eureka
+  instance:
+    instance-id:  ${spring.application.name}     
+app-two-services:
+   ribbon:
+    listOfServers: localhost:10001, localhost:10002
