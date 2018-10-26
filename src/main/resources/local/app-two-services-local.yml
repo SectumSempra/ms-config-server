@@ -23,7 +23,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://10.6.221.129:10003/eureka     
+      defaultZone: http://10.6.221.129:10003/eureka   
 #################################      
 app-one-services:
   ribbon:
