@@ -5,5 +5,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://10.6.221.129:20003/eureka         
-  instance:
-    instance-id:  ${spring.application.name}   
