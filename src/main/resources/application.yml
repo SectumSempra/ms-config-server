@@ -10,7 +10,6 @@ spring:
           clone-on-start: true
           uri: C:\workspace-BE\config-server\.git
           search-paths: src/main/resources/local,src/main/resources/test
-      override-none: false
 #######################################
 eureka:
   instance:
