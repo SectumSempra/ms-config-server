@@ -14,4 +14,11 @@ spring:
 eureka:
   instance:
     instance-id:  ${spring.application.name}         
-      
+##########################
+info:
+  app:
+   name : ${spring.application.name}
+   description: '@project.description@'
+   version: '@project.version@'
+   java:
+    version: '@java.version@'      
