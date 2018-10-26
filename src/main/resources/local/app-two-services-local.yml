@@ -23,10 +23,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://10.6.221.129:10003/eureka
-  instance:
-    instance-id : ${spring.application.name}:${ip}:${spring.profiles.active}:${server.port} 
-      
+      defaultZone: http://10.6.221.129:10003/eureka     
 #################################      
 app-one-services:
   ribbon:
