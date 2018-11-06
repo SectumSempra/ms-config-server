@@ -5,18 +5,16 @@ spring:
   application:
     name: config-server  
   profiles:
-    active: native,test,prod
+    active: local,test,prod
   cloud:
     config:
       server:
         git:
           clone-on-start: true
           uri: C:\workspace-BE\config-server\.git
-          search-paths: src/main/resources/prod,src/main/resources/test
-        native:
-           search-locations : classpath:/native   
-
-           
+          search-paths: src/main/resources/prod,src/main/resources/test,,src/main/resources/local
+#        native:
+#           search-locations : classpath:/local   
             
 #######################################
 eureka:
