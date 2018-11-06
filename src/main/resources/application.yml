@@ -1,19 +1,27 @@
+server:
+  port: 10010
+#####################################         
 spring:
   application:
-    name: config-server    
+    name: config-server  
   profiles:
-    active: local      
+    active: native
   cloud:
     config:
       server:
         git:
           clone-on-start: true
           uri: C:\workspace-BE\config-server\.git
-          search-paths: src/main/resources/local,src/main/resources/test
+          search-paths: src/main/resources/prod,src/main/resources/test
+        native :
+         search-locations : classpath:/src/main/resources/local
 #######################################
 eureka:
   instance:
-    instance-id:  ${spring.application.name}         
+    instance-id : ${spring.application.name}:${ip}:${spring.profiles.active}:${server.port}      
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVICE_URL:http://10.6.221.129:10003}/eureka             
 ##########################
 info:
   app:
