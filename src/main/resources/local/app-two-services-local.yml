@@ -3,7 +3,7 @@ server:
 ###############################    
 spring:
   datasource:
-    url: jdbc:h2:mem:hr;DB_CLOSE_ON_EXIT=FALSE;INIT=RUNSCRIPT FROM 'classpath:scripts/load.sql';
+    url: jdbc:h2:mem:hr;DB_CLOSE_ON_EXIT=FALSE;INIT=RUNSCRIPT FROM 'classpath*:load.sql';
     username: sa
     password: null
     driver-class-name: org.h2.Driver
