@@ -1,0 +1,35 @@
+server:
+  port: 10001
+###############################    
+spring:
+  datasource:
+    url: jdbc:h2:mem:hr;DB_CLOSE_ON_EXIT=FALSE;INIT=RUNSCRIPT FROM 'classpath:scripts/load.sql';
+    username: sa
+    password: null
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2-database
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  cloud:
+    config:
+      allow-override: true 
+      override-none: true
+      override-system-properties: false
+#################################        
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.6.221.129:10003/eureka   
+#################################      
+app-one-services:
+  ribbon:
+    listOfServers: localhost:10000, localhost:10005

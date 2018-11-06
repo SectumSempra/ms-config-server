@@ -1,11 +1,11 @@
 server:
   port: 10010
-#####################################         
+#####################################  
 spring:
   application:
     name: config-server  
   profiles:
-    active: native
+    active: native,test,prod
   cloud:
     config:
       server:
@@ -13,8 +13,11 @@ spring:
           clone-on-start: true
           uri: C:\workspace-BE\config-server\.git
           search-paths: src/main/resources/prod,src/main/resources/test
-        native :
-         search-locations : classpath:/src/main/resources/local
+        native:
+           search-locations : classpath:/native   
+
+           
+            
 #######################################
 eureka:
   instance:
