@@ -1,0 +1,7 @@
+Config-server
+ 
+local run - already default 
+  java -jar -Dspring.profiles.active=native -Dserver.port=10010  config-server-0.0.1-SNAPSHOT.jar
+
+ test run 
+  java -jar -Dspring.profiles.active=test -Dserver.port=10011 -DEUREKA_SERVICE_URL=http://10.6.221.129:20003 config-server-0.0.1-SNAPSHOT.jar

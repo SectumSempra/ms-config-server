@@ -7,6 +7,8 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
@@ -15,7 +17,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 @EnableConfigServer
 @SpringBootApplication
-public class ConfigServerApplication {
+public class ConfigServerApplication implements CommandLineRunner {
+
+    @Value("${EUREKA_SERVICE_URL}")
+    private String EUREKA_SERVICE_URL;
 
     public static Map<String, Object> getMap() throws Exception {
         Map<String, Object> map = new HashMap<>();
@@ -44,5 +49,10 @@ public class ConfigServerApplication {
         application.setDefaultProperties(getMap());
         application.run(args);
 
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        System.err.println(EUREKA_SERVICE_URL);
     }
 }
