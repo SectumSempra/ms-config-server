@@ -1,5 +1,7 @@
 server:
   port: 10010
+#####################################    
+project-base-dir: '@project.basedir@'   
 #####################################  
 spring:
   application:
@@ -11,7 +13,7 @@ spring:
       server:
         git:
           clone-on-start: true
-          uri: C:\workspace-BE\config-server\.git
+          uri:  ${project-base-dir}\.git
           search-paths: src/main/resources/prod,src/main/resources/test,,src/main/resources/local
 #        native:
 #           search-locations : classpath:/local   
