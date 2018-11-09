@@ -27,4 +27,4 @@ eureka:
 ########################################################    
 app-two-services:
    ribbon:
-    listOfServers: localhost:10001, localhost:10002
+    listOfServers: localhost:20001, localhost:20002

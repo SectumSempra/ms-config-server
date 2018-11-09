@@ -27,4 +27,4 @@ eureka:
 #################################      
 app-one-services:
   ribbon:
-    listOfServers: localhost:10000, localhost:10005
+    listOfServers: localhost:20000, localhost:20005
