@@ -1,5 +1,5 @@
 server:
-   port: 10000
+  port: 10000
 ########################################################    
 spring:
   datasource:
@@ -28,7 +28,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://10.6.221.129:10003/eureka
+      defaultZone: ${IP_ME}:10003/eureka
 ########################################################    
 app-two-services:
    ribbon:

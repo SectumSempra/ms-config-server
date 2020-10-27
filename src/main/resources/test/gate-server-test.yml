@@ -4,4 +4,4 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://10.6.221.129:20003/eureka
+      defaultZone: ${IP_ME}:20003/eureka

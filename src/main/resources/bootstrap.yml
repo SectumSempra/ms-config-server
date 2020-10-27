@@ -1,5 +1,6 @@
-project-base-dir: '@project.basedir@'   
-EUREKA_SERVICE_URL : http://10.6.221.129:10003
+project-base-dir: '@project.basedir@'
+IP_ME : http://192.168.1.108
+EUREKA_SERVICE_URL : ${IP_ME}:10003
 #####################################    
 server:
   port: 10010
